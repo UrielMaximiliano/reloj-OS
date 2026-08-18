@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>NSBluetoothAlwaysUsageDescription</key>
+    <string>JOOG Forge necesita Bluetooth para descubrir y leer el reloj en modo seguro.</string>
+    <key>NSBluetoothPeripheralUsageDescription</key>
+    <string>JOOG Forge necesita Bluetooth para observar el reloj en modo seguro.</string>
+</dict>
+</plist>

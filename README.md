@@ -22,6 +22,22 @@ Desde PowerShell, ubicado en la raíz del repositorio:
 
 Si PowerShell bloquea la activación del entorno, puede usarse directamente `.\.venv\Scripts\python.exe` o ajustarse la política de ejecución de forma consciente en el entorno del usuario.
 
+## Primera base nativa para iOS
+
+El paquete local `ios/ForgeIOS` agrega un cliente CoreBluetooth para iPhone:
+escaneo, conexión, enumeración GATT, lecturas explícitas y exportación JSONL
+`ble-capture/v1`. Incluye una vista SwiftUI mínima en
+`ios/ForgeIOS/Sources/ForgeIOS/ForgeDashboardView.swift`.
+
+Para integrarlo, abre Xcode, crea una app SwiftUI y añade `ios/ForgeIOS` como
+paquete local. Copia las claves Bluetooth de
+`ios/ForgeIOS/Info.plist.example`. Las suscripciones NOTIFY están apagadas por
+defecto; no hay `writeValue`, OTA, DFU, reset ni replay.
+
+La guía completa está en [ios/README.md](ios/README.md). iOS no ofrece HCI snoop
+crudo desde la API pública, por lo que esta primera versión captura observaciones
+a nivel de aplicación y deja el análisis de protocolo para el núcleo portable.
+
 ## Diagnostico y ejecucion reproducible
 
 El error `ModuleNotFoundError: No module named 'bleak'` aparece cuando `python`
