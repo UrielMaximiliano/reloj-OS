@@ -1,0 +1,312 @@
+[
+  {
+    "label": "baseline",
+    "timestamp": "2026-08-13T14:52:43.909615Z",
+    "firmware": "MOY-8QJ4-2.0.8",
+    "result": {},
+    "file": "baseline_20260813_115243.jsonl",
+    "notes": "0 notification packets; raw JSONL session"
+  },
+  {
+    "label": "doctor_idle",
+    "timestamp": "2026-08-13T15:57:38.418071Z",
+    "firmware": "MOY-8QJ4-2.0.8",
+    "result": {},
+    "file": "doctor_idle_20260813_125738.jsonl",
+    "notes": "0 notification packets; raw JSONL session"
+  },
+  {
+    "label": "gatt_20260813_114902",
+    "timestamp": "2026-08-13T14:49:02.676905Z",
+    "firmware": "MOY-8QJ4-2.0.8",
+    "result": {},
+    "file": "gatt_20260813_114902.json",
+    "notes": "JSON capture"
+  },
+  {
+    "label": "gatt_20260813_115049",
+    "timestamp": "2026-08-13T14:50:49.819055Z",
+    "firmware": "MOY-8QJ4-2.0.8",
+    "result": {},
+    "file": "gatt_20260813_115049.json",
+    "notes": "JSON capture"
+  },
+  {
+    "label": "gatt_20260813_115118",
+    "timestamp": "2026-08-13T14:51:17.883966Z",
+    "firmware": "MOY-8QJ4-2.0.8",
+    "result": {},
+    "file": "gatt_20260813_115118.json",
+    "notes": "JSON capture"
+  },
+  {
+    "label": "gatt_20260813_121009",
+    "timestamp": "2026-08-13T15:10:08.932959Z",
+    "firmware": "MOY-8QJ4-2.0.8",
+    "result": {},
+    "file": "gatt_20260813_121009.json",
+    "notes": "JSON capture"
+  },
+  {
+    "label": "gatt_20260813_121302",
+    "timestamp": "2026-08-13T15:13:01.680569Z",
+    "firmware": "MOY-8QJ4-2.0.8",
+    "result": {},
+    "file": "gatt_20260813_121302.json",
+    "notes": "JSON capture"
+  },
+  {
+    "label": "gatt_20260813_125718",
+    "timestamp": "2026-08-13T15:57:17.781936Z",
+    "firmware": "MOY-8QJ4-2.0.8",
+    "result": {},
+    "file": "gatt_20260813_125718.json",
+    "notes": "JSON capture"
+  },
+  {
+    "label": "gatt_20260818_194927",
+    "timestamp": "2026-08-18T22:49:26.248082Z",
+    "firmware": "MOY-8QJ4-2.0.8",
+    "result": {},
+    "file": "gatt_20260818_194927.json",
+    "notes": "JSON capture"
+  },
+  {
+    "label": "heart_rate_01",
+    "timestamp": "2026-08-18T22:40:10.197984Z",
+    "firmware": "MOY-8QJ4-2.0.8",
+    "result": {},
+    "file": "heart_rate_01_20260818_194010.jsonl",
+    "notes": "1 notification packets; raw JSONL session"
+  },
+  {
+    "label": "heart_rate_after_dafit",
+    "timestamp": "2026-08-18T22:50:38.173719Z",
+    "firmware": "MOY-8QJ4-2.0.8",
+    "result": {},
+    "file": "heart_rate_after_dafit_20260818_195038.jsonl",
+    "notes": "2 notification packets; raw JSONL session"
+  },
+  {
+    "label": "idle",
+    "timestamp": "2026-08-13T15:10:40.783537Z",
+    "firmware": "MOY-8QJ4-2.0.8",
+    "result": {},
+    "file": "idle_20260813_121040.jsonl",
+    "notes": "1 notification packets; raw JSONL session"
+  },
+  {
+    "label": "safe_read_20260813_114935",
+    "timestamp": "2026-08-13T14:49:34.741699Z",
+    "firmware": "MOY-8QJ4-2.0.8",
+    "result": {
+      "00002a00-0000-1000-8000-00805f9b34fb": {
+        "service": "Generic Access",
+        "characteristic": "Device Name"
+      },
+      "00002a38-0000-1000-8000-00805f9b34fb": {
+        "service": "Heart Rate",
+        "characteristic": "Body Sensor Location"
+      },
+      "00002a19-0000-1000-8000-00805f9b34fb": {
+        "service": "Battery Service",
+        "characteristic": "Battery Level",
+        "battery_percent": 43
+      },
+      "00002a25-0000-1000-8000-00805f9b34fb": {
+        "service": "Device Information",
+        "characteristic": "Serial Number String"
+      },
+      "00002a26-0000-1000-8000-00805f9b34fb": {
+        "service": "Device Information",
+        "characteristic": "Firmware Revision String"
+      },
+      "00002a28-0000-1000-8000-00805f9b34fb": {
+        "service": "Device Information",
+        "characteristic": "Software Revision String"
+      },
+      "00002a29-0000-1000-8000-00805f9b34fb": {
+        "service": "Device Information",
+        "characteristic": "Manufacturer Name String"
+      }
+    },
+    "file": "safe_read_20260813_114935.json",
+    "notes": "safe READ snapshot"
+  },
+  {
+    "label": "safe_read_20260813_115503",
+    "timestamp": "2026-08-13T14:55:03.433755Z",
+    "firmware": "MOY-8QJ4-2.0.8",
+    "result": {
+      "00002a00-0000-1000-8000-00805f9b34fb": {
+        "service": "Generic Access",
+        "characteristic": "Device Name"
+      },
+      "00002a38-0000-1000-8000-00805f9b34fb": {
+        "service": "Heart Rate",
+        "characteristic": "Body Sensor Location"
+      },
+      "00002a19-0000-1000-8000-00805f9b34fb": {
+        "service": "Battery Service",
+        "characteristic": "Battery Level",
+        "battery_percent": 43
+      },
+      "00002a25-0000-1000-8000-00805f9b34fb": {
+        "service": "Device Information",
+        "characteristic": "Serial Number String"
+      },
+      "00002a26-0000-1000-8000-00805f9b34fb": {
+        "service": "Device Information",
+        "characteristic": "Firmware Revision String"
+      },
+      "00002a28-0000-1000-8000-00805f9b34fb": {
+        "service": "Device Information",
+        "characteristic": "Software Revision String"
+      },
+      "00002a29-0000-1000-8000-00805f9b34fb": {
+        "service": "Device Information",
+        "characteristic": "Manufacturer Name String"
+      }
+    },
+    "file": "safe_read_20260813_115503.json",
+    "notes": "safe READ snapshot"
+  },
+  {
+    "label": "after_heart_rate_01",
+    "timestamp": "2026-08-18T22:41:36.389990Z",
+    "firmware": "MOY-8QJ4-2.0.8",
+    "result": {
+      "00002a00-0000-1000-8000-00805f9b34fb": {
+        "service": "Generic Access",
+        "characteristic": "Device Name"
+      },
+      "00002a38-0000-1000-8000-00805f9b34fb": {
+        "service": "Heart Rate",
+        "characteristic": "Body Sensor Location"
+      },
+      "00002a19-0000-1000-8000-00805f9b34fb": {
+        "service": "Battery Service",
+        "characteristic": "Battery Level",
+        "battery_percent": 103
+      },
+      "00002a25-0000-1000-8000-00805f9b34fb": {
+        "service": "Device Information",
+        "characteristic": "Serial Number String"
+      },
+      "00002a26-0000-1000-8000-00805f9b34fb": {
+        "service": "Device Information",
+        "characteristic": "Firmware Revision String"
+      },
+      "00002a28-0000-1000-8000-00805f9b34fb": {
+        "service": "Device Information",
+        "characteristic": "Software Revision String"
+      },
+      "00002a29-0000-1000-8000-00805f9b34fb": {
+        "service": "Device Information",
+        "characteristic": "Manufacturer Name String"
+      }
+    },
+    "file": "safe_read_after_heart_rate_01_20260818_194137.json",
+    "notes": "safe READ snapshot"
+  },
+  {
+    "label": "before_hr",
+    "timestamp": "2026-08-13T15:11:54.793976Z",
+    "firmware": "MOY-8QJ4-2.0.8",
+    "result": {
+      "00002a00-0000-1000-8000-00805f9b34fb": {
+        "service": "Generic Access",
+        "characteristic": "Device Name"
+      },
+      "00002a38-0000-1000-8000-00805f9b34fb": {
+        "service": "Heart Rate",
+        "characteristic": "Body Sensor Location"
+      },
+      "00002a19-0000-1000-8000-00805f9b34fb": {
+        "service": "Battery Service",
+        "characteristic": "Battery Level",
+        "battery_percent": 43
+      },
+      "00002a25-0000-1000-8000-00805f9b34fb": {
+        "service": "Device Information",
+        "characteristic": "Serial Number String"
+      },
+      "00002a26-0000-1000-8000-00805f9b34fb": {
+        "service": "Device Information",
+        "characteristic": "Firmware Revision String"
+      },
+      "00002a28-0000-1000-8000-00805f9b34fb": {
+        "service": "Device Information",
+        "characteristic": "Software Revision String"
+      },
+      "00002a29-0000-1000-8000-00805f9b34fb": {
+        "service": "Device Information",
+        "characteristic": "Manufacturer Name String"
+      }
+    },
+    "file": "safe_read_before_hr_20260813_121155.json",
+    "notes": "safe READ snapshot"
+  },
+  {
+    "label": "doctor_after_bootstrap",
+    "timestamp": "2026-08-13T15:57:27.894395Z",
+    "firmware": "MOY-8QJ4-2.0.8",
+    "result": {
+      "00002a00-0000-1000-8000-00805f9b34fb": {
+        "service": "Generic Access",
+        "characteristic": "Device Name"
+      },
+      "00002a38-0000-1000-8000-00805f9b34fb": {
+        "service": "Heart Rate",
+        "characteristic": "Body Sensor Location"
+      },
+      "00002a19-0000-1000-8000-00805f9b34fb": {
+        "service": "Battery Service",
+        "characteristic": "Battery Level",
+        "battery_percent": 42
+      },
+      "00002a25-0000-1000-8000-00805f9b34fb": {
+        "service": "Device Information",
+        "characteristic": "Serial Number String"
+      },
+      "00002a26-0000-1000-8000-00805f9b34fb": {
+        "service": "Device Information",
+        "characteristic": "Firmware Revision String"
+      },
+      "00002a28-0000-1000-8000-00805f9b34fb": {
+        "service": "Device Information",
+        "characteristic": "Software Revision String"
+      },
+      "00002a29-0000-1000-8000-00805f9b34fb": {
+        "service": "Device Information",
+        "characteristic": "Manufacturer Name String"
+      }
+    },
+    "file": "safe_read_doctor_after_bootstrap_20260813_125729.json",
+    "notes": "safe READ snapshot"
+  },
+  {
+    "label": "scan_after_dafit",
+    "timestamp": "2026-08-18T22:47:58Z",
+    "firmware": "MOY-8QJ4-2.0.8",
+    "result": {},
+    "file": "scan_after_dafit.json",
+    "notes": "JSON capture"
+  },
+  {
+    "label": "scan_after_dafit_ready",
+    "timestamp": "2026-08-18T22:49:08Z",
+    "firmware": "MOY-8QJ4-2.0.8",
+    "result": {},
+    "file": "scan_after_dafit_ready.json",
+    "notes": "JSON capture"
+  },
+  {
+    "label": "scan_validation",
+    "timestamp": "2026-08-13T14:48:05Z",
+    "firmware": "MOY-8QJ4-2.0.8",
+    "result": {},
+    "file": "scan_validation.json",
+    "notes": "JSON capture"
+  }
+]

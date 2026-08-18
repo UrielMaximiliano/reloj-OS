@@ -1,0 +1,13 @@
+{
+  "device_name": "FRG",
+  "device_address": null,
+  "known_firmware": "MOY-8QJ4-2.0.8",
+  "known_display": "360x360",
+  "soc": "JL7012F6",
+  "allow_write": false,
+  "scan_timeout": 15.0,
+  "connect_timeout": 15.0,
+  "read_timeout": 10.0,
+  "captures_dir": "captures",
+  "logs_dir": "logs"
+}

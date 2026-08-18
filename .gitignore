@@ -1,0 +1,24 @@
+.venv/
+.venv.broken_*/
+.venv.backup_*/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.codebase-memory/
+
+# Local configuration and runtime data
+config.json
+captures/*.json
+captures/*.jsonl
+!captures/index.json
+logs/*.log
+firmware/stock/*
+!firmware/stock/.gitkeep
+
+# Editors and OS files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
