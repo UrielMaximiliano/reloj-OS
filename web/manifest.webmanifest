@@ -1,0 +1,10 @@
+{
+  "name": "JOOG Forge Observation Console",
+  "short_name": "JOOG Forge",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b1117",
+  "theme_color": "#0b1117",
+  "description": "Local read-only BLE observation console for JOOG Forge.",
+  "icons": [{"src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable"}]
+}

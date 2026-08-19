@@ -157,12 +157,12 @@ forge/ble (scanner, connector, GATT, reader, notifier)
     │ raw observations
     ▼
 forge/capture + forge/protocol (JSON/JSONL y análisis offline)
-    │ posteriormente
+    │ HTTP local read-only
     ▼
-FastAPI read-only / PWA experimental
+FastAPI + web/ (Windows host; Safari client on the LAN)
 ```
 
-La PWA queda deliberadamente para una etapa posterior; la API local read-only se habilitó después de verificar la conexión y revisar los primeros resultados reales del reloj.
+La web app se sirve desde el mismo FastAPI para evitar Xcode, macOS y una cadena de build nativa. El iPhone actúa como cliente Safari; el escaneo y las conexiones BLE siguen ejecutándose en Windows mediante Bleak.
 
 ## API local read-only
 
@@ -175,6 +175,18 @@ La conexión inicial ya fue verificada, por lo que también está disponible una
 Swagger: `http://localhost:8000/docs`
 
 Endpoints: `GET /devices`, `GET /devices/{id}`, `GET /devices/{id}/services`, `GET /devices/{id}/characteristics`, `GET /devices/{id}/battery`, `GET /captures` y `GET /captures/{id}`.
+
+## Web app para iPhone Safari
+
+Arrancar el servidor escuchando en la red privada de Windows:
+
+```powershell
+.\.venv\Scripts\python.exe -m uvicorn forge.api.app:app --host 0.0.0.0 --port 8000
+```
+
+Desde el iPhone conectado a la misma Wi-Fi abrir `http://IP-PRIVADA-DE-WINDOWS:8000/`. La dirección se puede consultar con `ipconfig`. Si Windows Firewall pregunta, permitir el proceso únicamente en redes privadas. La interfaz muestra el límite read-only de forma persistente y solo ofrece escaneo, inspección GATT, lectura segura de batería y consulta de capturas; no hay controles de escritura, OTA, DFU, reset ni replay.
+
+El service worker es una mejora opcional para una instalación en pantalla de inicio. En iOS, el modo offline y la instalación PWA confiable requieren HTTPS; la funcionalidad BLE de esta aplicación sigue dependiendo de que el backend Windows esté encendido y accesible en la LAN.
 
 ## Limitaciones conocidas
 

@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#0b1117">
+    <meta name="description" content="JOOG Forge local read-only BLE observation console.">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.svg">
+    <link rel="stylesheet" href="/styles.css">
+    <title>JOOG Forge · Observation Console</title>
+  </head>
+  <body>
+    <div class="page-noise" aria-hidden="true"></div>
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="JOOG Forge home">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span class="brand-copy"><strong>JOOG</strong><small>FORGE</small></span>
+      </a>
+      <div class="topbar-status"><span class="status-dot"></span><span>LOCAL CONSOLE</span></div>
+    </header>
+
+    <main class="app-shell">
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow">FIELD OBSERVATION / 01</p>
+          <h1 id="page-title">See what your watch<br><em>is saying.</em></h1>
+          <p class="hero-intro">A calm, local-first workbench for discovering nearby devices, mapping GATT, and reading only what is explicitly safe.</p>
+        </div>
+        <div class="hero-orbit" aria-hidden="true">
+          <div class="orbit-ring orbit-ring-one"></div>
+          <div class="orbit-ring orbit-ring-two"></div>
+          <div class="orbit-core"><span class="orbit-mark"></span></div>
+          <span class="orbit-label orbit-label-top">BLE</span>
+          <span class="orbit-label orbit-label-right">READ</span>
+          <span class="orbit-label orbit-label-bottom">LOCAL</span>
+        </div>
+      </section>
+
+      <section class="safety-banner" aria-label="Read-only safety boundary">
+        <div class="safety-icon" aria-hidden="true">⌁</div>
+        <div class="safety-copy">
+          <div class="safety-title"><span class="eyebrow">READ-ONLY SAFETY BOUNDARY</span><span class="safety-lock">LOCKED</span></div>
+          <strong>This console observes. It never controls.</strong>
+          <p>Scan, inspect GATT, read the standard Battery Level when marked <code>READ</code>, and browse local captures. No write, OTA, DFU, reset, or replay actions are exposed.</p>
+        </div>
+      </section>
+
+      <div id="appAlert" class="app-alert" role="alert" hidden></div>
+
+      <div class="workspace-grid">
+        <section class="panel scan-panel" aria-labelledby="scan-title">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">01 / DISCOVER</p>
+              <h2 id="scan-title">Nearby devices</h2>
+            </div>
+            <button id="scanButton" class="button button-primary" type="button"><span class="button-icon" aria-hidden="true">↗</span><span>Scan</span></button>
+          </div>
+          <div class="scan-status" aria-live="polite">
+            <span id="scanStatusDot" class="status-dot muted"></span>
+            <span id="scanStatus">Ready to scan for nearby BLE devices.</span>
+          </div>
+          <div id="devicesList" class="device-list" aria-live="polite">
+            <div class="empty-state">
+              <span class="empty-glyph" aria-hidden="true">⌁</span>
+              <strong>No devices in view</strong>
+              <span>Start a scan to see advertising data from nearby hardware.</span>
+            </div>
+          </div>
+          <p class="panel-footnote"><span class="footnote-mark">i</span> Scanning listens for advertisements only. A connection starts only after you request an inspection or safe read.</p>
+        </section>
+
+        <section class="panel inspector-panel" aria-labelledby="inspector-title">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">02 / INSPECT</p>
+              <h2 id="inspector-title">Selected device</h2>
+            </div>
+            <span id="selectedState" class="quiet-badge">NOT SELECTED</span>
+          </div>
+          <div id="deviceEmpty" class="inspector-empty">
+            <div class="inspector-empty-mark" aria-hidden="true">+</div>
+            <strong>Choose a device to continue</strong>
+            <span>GATT details and safe battery reads stay dormant until you select a result.</span>
+          </div>
+          <div id="deviceDetails" hidden>
+            <div class="selected-device-card">
+              <div class="selected-device-heading">
+                <div class="device-avatar" aria-hidden="true">◌</div>
+                <div><strong id="selectedName">—</strong><span id="selectedAddress">—</span></div>
+              </div>
+              <div class="selected-device-meta">
+                <span><small>RSSI</small><strong id="selectedRssi">—</strong></span>
+                <span><small>PROFILE</small><strong id="selectedProfile">—</strong></span>
+                <span><small>STATUS</small><strong class="status-text">AVAILABLE</strong></span>
+              </div>
+            </div>
+            <div class="action-grid">
+              <button id="inspectButton" class="button button-secondary" type="button"><span class="button-icon" aria-hidden="true">⌘</span><span>Inspect GATT</span></button>
+              <button id="batteryButton" class="button button-secondary" type="button"><span class="button-icon" aria-hidden="true">◒</span><span>Read battery</span></button>
+            </div>
+            <div id="batteryResult" class="result-slot" aria-live="polite"></div>
+            <div id="gattResult" class="gatt-result" aria-live="polite">
+              <div class="result-placeholder"><span class="result-placeholder-line"></span><span class="result-placeholder-line short"></span><span class="result-placeholder-line"></span><small>GATT map appears here after inspection.</small></div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <section class="panel captures-panel" aria-labelledby="captures-title">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">03 / REVIEW</p>
+            <h2 id="captures-title">Capture browser</h2>
+          </div>
+          <button id="refreshCapturesButton" class="button button-ghost" type="button"><span class="button-icon" aria-hidden="true">↻</span><span>Refresh</span></button>
+        </div>
+        <div class="captures-layout">
+          <div id="capturesList" class="captures-list" aria-live="polite">
+            <div class="empty-state compact"><span class="empty-glyph" aria-hidden="true">▱</span><strong>No captures loaded</strong><span>Local JSON and JSONL observations will appear here.</span></div>
+          </div>
+          <div id="capturePreview" class="capture-preview">
+            <div class="preview-header"><span class="eyebrow">RAW OBSERVATION</span><span id="capturePreviewMeta" class="quiet-badge">NONE OPEN</span></div>
+            <pre id="captureData"><code>Select a capture to preview its JSON.</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <footer class="app-footer">
+        <span>JOOG FORGE / LOCAL RESEARCH CONSOLE</span>
+        <span class="footer-separator">•</span>
+        <span>READ-ONLY BY DESIGN</span>
+      </footer>
+    </main>
+
+    <noscript><div class="noscript-message">JavaScript is required for the observation console.</div></noscript>
+    <script src="/app.js" defer></script>
+  </body>
+</html>
